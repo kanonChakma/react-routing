@@ -4,7 +4,7 @@ const Country = (props) => {
   const { name, capital } = props.country;
 
   const history = useHistory();
-  const handleButon = (id) => {
+  const handleButon = (id)=>{
     const url = `/country/${id}`;
     history.push(url);
   };
