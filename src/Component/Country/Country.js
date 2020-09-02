@@ -1,8 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 const Country = (props) => {
   const { name, capital } = props.country;
-  const countryStyle = {
+
+  const history = useHistory();
+  const handleButon = (id) => {
+    const url = `/country/${id}`;
+    history.push(url);
+  };
+  const countryStyle={
     border: "1px solid gray",
     margin: "20px",
     padding: "10px",
@@ -12,7 +18,7 @@ const Country = (props) => {
     <div style={countryStyle}>
       <h4>Country Name is:{name}</h4>
       <h4>Country Capital is:{capital}</h4>
-      <button>{name} details</button>
+      <button onClick={() => handleButon(name)}>{name} details</button>
       <Link to={`/country/${name}`}>{name} details</Link>
     </div>
   );

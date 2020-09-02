@@ -8,7 +8,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setCountryInfo(data));
   }, []);
-  const country = countryInfo.slice(0, 10);
+  const country = countryInfo.slice(0, 50);
   return (
     <div>
       <h2>Country Length is: {country.length}</h2>
